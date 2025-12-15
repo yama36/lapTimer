@@ -1,0 +1,462 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  /* Default Fallback */
+  --background: #ffffff;
+  --foreground: #000000;
+  --radius: 0.5rem;
+}
+
+/* =========================================
+   THEME: CYBERPUNK NEON
+   ========================================= */
+:root:not([data-theme]), [data-theme="cyberpunk"] {
+  --font-display: "Orbitron", sans-serif;
+  --font-mono: "Roboto Mono", monospace;
+  --font-body: "Roboto Mono", monospace;
+
+  --background: #050505;
+  --foreground: #e0e0e0;
+  
+  --card: #0a0a0a;
+  --card-foreground: #e0e0e0;
+  
+  --popover: #0a0a0a;
+  --popover-foreground: #e0e0e0;
+  
+  --primary: #00f3ff; /* Neon Cyan */
+  --primary-foreground: #000000;
+  
+  --secondary: #bc13fe; /* Electric Purple */
+  --secondary-foreground: #ffffff;
+  
+  --muted: #1a1a1a;
+  --muted-foreground: #888888;
+  
+  --accent: #1a1a1a;
+  --accent-foreground: #00f3ff;
+  
+  --destructive: #ff003c; /* Laser Red */
+  --destructive-foreground: #ffffff;
+  
+  --border: #333333;
+  --input: #1a1a1a;
+  --ring: #00f3ff;
+  
+  --radius: 0.25rem;
+  
+  --chart-1: #00f3ff;
+  --chart-2: #bc13fe;
+  --chart-3: #ff003c;
+  --chart-4: #ffff00;
+  --chart-5: #00ff00;
+}
+
+/* =========================================
+   THEME: SIMPLE LIGHT
+   ========================================= */
+[data-theme="simple"] {
+  --font-display: "Inter", sans-serif;
+  --font-mono: "Roboto Mono", monospace;
+  --font-body: "Inter", sans-serif;
+
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+  
+  --card: #f9fafb;
+  --card-foreground: #1a1a1a;
+  
+  --popover: #ffffff;
+  --popover-foreground: #1a1a1a;
+  
+  --primary: #18181b; /* Zinc 900 */
+  --primary-foreground: #ffffff;
+  
+  --secondary: #f4f4f5;
+  --secondary-foreground: #18181b;
+  
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  
+  --accent: #f4f4f5;
+  --accent-foreground: #18181b;
+  
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  
+  --border: #e4e4e7;
+  --input: #e4e4e7;
+  --ring: #18181b;
+  
+  --radius: 0.5rem;
+  
+  --chart-1: #18181b;
+  --chart-2: #52525b;
+  --chart-3: #71717a;
+  --chart-4: #a1a1aa;
+  --chart-5: #d4d4d8;
+}
+
+/* =========================================
+   THEME: POP PINK
+   ========================================= */
+[data-theme="pop"] {
+  --font-display: "Poppins", sans-serif;
+  --font-mono: "Roboto Mono", monospace;
+  --font-body: "Poppins", sans-serif;
+
+  --background: #fff0f5; /* Lavender Blush */
+  --foreground: #4a044e; /* Fuchsia 950 */
+  
+  --card: #ffffff;
+  --card-foreground: #4a044e;
+  
+  --popover: #ffffff;
+  --popover-foreground: #4a044e;
+  
+  --primary: #d946ef; /* Fuchsia 500 */
+  --primary-foreground: #ffffff;
+  
+  --secondary: #f0abfc; /* Fuchsia 300 */
+  --secondary-foreground: #4a044e;
+  
+  --muted: #fae8ff;
+  --muted-foreground: #a21caf;
+  
+  --accent: #fae8ff;
+  --accent-foreground: #d946ef;
+  
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  
+  --border: #f5d0fe;
+  --input: #f5d0fe;
+  --ring: #d946ef;
+  
+  --radius: 1.5rem; /* Very rounded */
+  
+  --chart-1: #d946ef;
+  --chart-2: #ec4899;
+  --chart-3: #f472b6;
+  --chart-4: #fb7185;
+  --chart-5: #fda4af;
+}
+
+/* =========================================
+   THEME: COLORFUL
+   ========================================= */
+[data-theme="colorful"] {
+  --font-display: "Fredoka", sans-serif;
+  --font-mono: "Roboto Mono", monospace;
+  --font-body: "Fredoka", sans-serif;
+
+  --background: #fefce8; /* Yellow 50 */
+  --foreground: #0f172a; /* Slate 900 */
+  
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+  
+  --primary: #8b5cf6; /* Violet 500 */
+  --primary-foreground: #ffffff;
+  
+  --secondary: #f59e0b; /* Amber 500 */
+  --secondary-foreground: #ffffff;
+  
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  
+  --accent: #10b981; /* Emerald 500 */
+  --accent-foreground: #ffffff;
+  
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  
+  --border: #cbd5e1;
+  --input: #cbd5e1;
+  --ring: #8b5cf6;
+  
+  --radius: 1rem;
+  
+  --chart-1: #8b5cf6;
+  --chart-2: #f59e0b;
+  --chart-3: #10b981;
+  --chart-4: #3b82f6;
+  --chart-5: #ef4444;
+}
+
+/* Dark Mode Override (if needed by system preference, but we control via data-theme) */
+.dark {
+  --background: #050505;
+  --foreground: #e0e0e0;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground transition-colors duration-500;
+    font-family: var(--font-body);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply tracking-tight;
+  }
+  
+  /* =========================================
+     THEME SPECIFIC STYLES
+     ========================================= */
+     
+  /* CYBERPUNK */
+  body:not([data-theme]), body[data-theme="cyberpunk"] {
+    background-image: 
+      linear-gradient(rgba(5, 5, 5, 0.92), rgba(5, 5, 5, 0.92)),
+      url('/images/cyberpunk_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  
+  body:not([data-theme]) h1, body[data-theme="cyberpunk"] h1 {
+    @apply tracking-widest uppercase;
+    text-shadow: 0 0 10px var(--primary);
+  }
+
+  /* SIMPLE */
+  body[data-theme="simple"] {
+    background-color: #f4f4f5; /* Zinc 100 */
+    background-image: none;
+  }
+  
+  /* POP */
+  body[data-theme="pop"] {
+    background-image: 
+      radial-gradient(circle at 10% 20%, rgba(217, 70, 239, 0.1) 0%, transparent 20%),
+      radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.1) 0%, transparent 20%);
+    background-attachment: fixed;
+  }
+  
+  /* COLORFUL */
+  body[data-theme="colorful"] {
+    background-image: 
+      linear-gradient(135deg, #fefce8 0%, #fff7ed 100%);
+    background-attachment: fixed;
+  }
+  
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--background); 
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--border); 
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--primary); 
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1280px;
+    }
+  }
+  
+  /* =========================================
+     THEME SPECIFIC COMPONENT STYLES
+     ========================================= */
+  
+  /* CYBERPUNK EFFECTS */
+  body:not([data-theme]) .neon-border, body[data-theme="cyberpunk"] .neon-border {
+    box-shadow: 0 0 5px var(--primary), inset 0 0 5px var(--primary);
+  }
+  
+  body:not([data-theme]) .neon-text, body[data-theme="cyberpunk"] .neon-text {
+    text-shadow: 0 0 5px var(--primary);
+  }
+  
+  body:not([data-theme]) .neon-text-secondary, body[data-theme="cyberpunk"] .neon-text-secondary {
+    text-shadow: 0 0 5px var(--secondary);
+  }
+  
+  body:not([data-theme]) .glass-panel, body[data-theme="cyberpunk"] .glass-panel {
+    background: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 243, 255, 0.2);
+  }
+  
+  /* SIMPLE EFFECTS */
+  body[data-theme="simple"] .glass-panel {
+    background: white;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  }
+  
+  /* POP EFFECTS */
+  body[data-theme="pop"] .glass-panel {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    border: 2px solid var(--border);
+    box-shadow: 4px 4px 0px var(--primary);
+    border-radius: 1.5rem;
+  }
+  
+  body[data-theme="pop"] .btn-pop {
+    box-shadow: 3px 3px 0px rgba(0,0,0,0.1);
+    transition: all 0.2s;
+  }
+  
+  body[data-theme="pop"] .btn-pop:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0px rgba(0,0,0,0.1);
+  }
+  
+  /* COLORFUL EFFECTS */
+  body[data-theme="colorful"] .glass-panel {
+    background: white;
+    border: 2px solid var(--border);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    border-radius: 1rem;
+  }
+
+  /* =========================================
+     GLOBAL COMPONENT OVERRIDES
+     ========================================= */
+     
+  /* Dialog/Modal Overrides */
+  body[data-theme="cyberpunk"] [role="dialog"],
+  body:not([data-theme]) [role="dialog"] {
+    @apply border-primary/30 bg-black/90 backdrop-blur-xl;
+    box-shadow: 0 0 50px rgba(0, 243, 255, 0.1);
+  }
+  
+  body[data-theme="simple"] [role="dialog"] {
+    @apply border-border bg-background shadow-xl rounded-lg;
+  }
+  
+  body[data-theme="pop"] [role="dialog"] {
+    @apply border-2 border-primary bg-white shadow-[8px_8px_0px_var(--primary)] rounded-3xl;
+  }
+  
+  body[data-theme="colorful"] [role="dialog"] {
+    @apply border-2 border-border bg-white shadow-2xl rounded-2xl;
+  }
+
+  /* Input/Select Overrides */
+  body[data-theme="cyberpunk"] input,
+  body[data-theme="cyberpunk"] select,
+  body:not([data-theme]) input,
+  body:not([data-theme]) select {
+    @apply bg-black/50 border-primary/30 focus:border-primary focus:ring-primary/50;
+  }
+  
+  body[data-theme="pop"] input,
+  body[data-theme="pop"] select {
+    @apply border-2 border-border rounded-xl focus:border-primary focus:ring-0 shadow-[2px_2px_0px_var(--border)];
+  }
+
+  /* Toaster/Notification Overrides */
+  body[data-theme="cyberpunk"] [data-sonner-toast] {
+    @apply bg-black/90 border-primary/30 text-foreground backdrop-blur-xl;
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
+    font-family: 'Orbitron', sans-serif;
+  }
+  
+  body[data-theme="simple"] [data-sonner-toast] {
+    @apply bg-white border border-border text-foreground shadow-lg;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  body[data-theme="pop"] [data-sonner-toast] {
+    @apply bg-white border-2 border-primary text-foreground shadow-[4px_4px_0px_var(--primary)] rounded-xl;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body[data-theme="colorful"] [data-sonner-toast] {
+    @apply bg-white/90 border-2 border-white text-foreground shadow-xl rounded-2xl backdrop-blur-md;
+    font-family: 'Fredoka', sans-serif;
+  }
+}
