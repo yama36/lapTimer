@@ -267,7 +267,15 @@ export default function Home() {
                       Total Time
                     </div>
                     {/* Font size adjusted to fit the narrower column */}
-                    <div className={`text-[15vw] lg:text-[6vw] font-mono font-bold text-primary tracking-tighter tabular-nums leading-none ${settings.theme === 'cyberpunk' ? 'neon-text' : ''}`} style={{ maxFontSize: '124px', fontSize: 'min(15vw,124px)', maxWidth: '100%' }}>
+                    <div
+                      className={`text-[15vw] lg:text-[6vw] font-mono font-bold text-primary tracking-tighter tabular-nums leading-none ${
+                        settings.theme === 'cyberpunk' ? 'neon-text' : ''
+                      }`}
+                      style={{
+                        fontSize: 'min(15vw,124px)',
+                        maxWidth: '100%',
+                      }}
+                    >
                       {secToClock(elapsedTime)}
                     </div>
                   </div>
