@@ -174,8 +174,10 @@ export function RunnerCard({ runner, onLap, onUndo, onFinish, isRunning, onClick
 
         <div className="grid grid-cols-4 gap-2 mt-auto">
           <Button 
-            className={`col-span-3 font-display tracking-wider bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm h-10 text-sm ${
-              theme === 'pop' ? 'shadow-[2px_2px_0px_rgba(0,0,0,0.2)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0px_rgba(0,0,0,0.2)] rounded-xl border-2 border-primary-foreground/20' : ''
+            className={`col-span-3 font-display tracking-wider bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm h-14 text-base font-bold ${
+              theme === 'cyberpunk' ? 'shadow-[0_0_15px_rgba(0,243,255,0.3)] hover:shadow-[0_0_20px_rgba(0,243,255,0.5)]' :
+              theme === 'pop' ? 'shadow-[2px_2px_0px_rgba(0,0,0,0.2)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0px_rgba(0,0,0,0.2)] rounded-xl border-2 border-primary-foreground/20' : 
+              'shadow-md hover:shadow-lg'
             }`}
             onClick={(e) => {
               e.stopPropagation();
@@ -183,10 +185,13 @@ export function RunnerCard({ runner, onLap, onUndo, onFinish, isRunning, onClick
             }}
             disabled={!isRunning}
           >
-            LAP
+            <span className="flex flex-col items-center gap-0.5">
+              <span className="text-xs font-normal opacity-90">{runner.name}</span>
+              <span>LAP</span>
+            </span>
           </Button>
           <Button 
-            className={`col-span-1 font-display bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-sm h-10 text-xs px-0 ${
+            className={`col-span-1 font-display bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-sm h-14 text-xs px-0 ${
               theme === 'pop' ? 'shadow-[2px_2px_0px_rgba(0,0,0,0.2)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0px_rgba(0,0,0,0.2)] rounded-xl border-2 border-secondary-foreground/20' : ''
             }`}
             onClick={(e) => {

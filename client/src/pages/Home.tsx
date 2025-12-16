@@ -51,8 +51,7 @@ export function useTheme() {
 }
 
 export default function Home() {
-  // The userAuth hooks provides authentication state
-  // To implement login/logout functionality, simply call logout() or redirect to getLoginUrl()
+  // Authentication is disabled - useAuth always returns null user
   let { user, loading, error, isAuthenticated, logout } = useAuth();
 
   const [settings, setSettings] = useState<AppSettings>(() => {
@@ -268,7 +267,7 @@ export default function Home() {
                       Total Time
                     </div>
                     {/* Font size adjusted to fit the narrower column */}
-                    <div className={`text-[15vw] lg:text-[6vw] font-mono font-bold text-primary tracking-tighter tabular-nums leading-none ${settings.theme === 'cyberpunk' ? 'neon-text' : ''}`}>
+                    <div className={`text-[15vw] lg:text-[6vw] font-mono font-bold text-primary tracking-tighter tabular-nums leading-none ${settings.theme === 'cyberpunk' ? 'neon-text' : ''}`} style={{ maxFontSize: '124px', fontSize: 'min(15vw,124px)', maxWidth: '100%' }}>
                       {secToClock(elapsedTime)}
                     </div>
                   </div>
